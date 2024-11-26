@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
+const userRoute = require("./routes/user.route.js");
+
 dotenv.config();
 mongoose
   .connect(process.env.MONGO_URI)
@@ -17,3 +19,5 @@ const app = express();
 app.listen(3000, () => {
   console.log("server is running on post 3000");
 });
+
+app.get("/", userRoute);

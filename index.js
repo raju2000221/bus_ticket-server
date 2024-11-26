@@ -1,8 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-// utM4zwX8u7nYGpwF
-// bdrajuislam246
+
 dotenv.config();
 mongoose
   .connect(process.env.MONGO_URI)

@@ -3,7 +3,12 @@ const {
   createBus,
   updateBus,
   deleteBus,
-} = require("../controllers/bus.controller");
+} = require("../controllers/bus.controller.js");
+const {
+  createTicket,
+  updateTicket,
+  deleteTicket,
+} = require("../controllers/ticket.controller.js");
 
 const router = express.Router();
 
@@ -11,5 +16,9 @@ const router = express.Router();
 router.post("/bus", createBus);
 router.put("/bus/:id", updateBus);
 router.delete("/bus/:id", deleteBus);
+
+router.post("/ticket", createTicket);
+router.put("/ticket/:id", updateTicket);
+router.delete("/ticket/:id", deleteTicket);
 
 module.exports = router;

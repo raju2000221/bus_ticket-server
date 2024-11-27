@@ -6,7 +6,6 @@ const createBus = async (req, res) => {
   const { busName, busType, schedule, busNumber } = req.body;
 
   try {
-    // Create a new bus instance with the provided data
     const newBus = new Bus({
       busName,
       busType,

@@ -44,10 +44,16 @@ const purchaseTicket = async (req, res) => {
     }
 
     // Check if seats are available
-    if (ticket.availableSeats <= 0) {
+    if (ticket.availableSeats === 0) {
       return res
         .status(400)
         .json({ message: "No seats available for this ticket" });
+    }
+
+    if (parseInt(quantity) > ticket.availableSeats) {
+      return res.status(400).json({
+        message: `You can't buy more than ${ticket.availableSeats} tickets`,
+      });
     }
 
     // Decrease available seats

@@ -47,7 +47,7 @@ const purchaseTicket = async (req, res) => {
     if (ticket.availableSeats === 0) {
       return res
         .status(400)
-        .json({ message: "No seats available for this ticket" });
+        .json({ message: "No seats available for this bus" });
     }
 
     if (parseInt(quantity) > ticket.availableSeats) {

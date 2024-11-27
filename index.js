@@ -29,11 +29,6 @@ app.use("/auth", authRoute);
 app.use("/admin", verifyAdmin, adminRoute);
 app.use("/", userRoute);
 
-// Catch-all route for undefined routes
-app.use((req, res) => {
-  res.status(404).json({ message: "Route not found" });
-});
-
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
